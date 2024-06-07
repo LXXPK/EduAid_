@@ -1,0 +1,76 @@
+  {% extends "base.html" %}
+
+  {% block title %} Student_info{% endblock title %}
+  {% block body%}
+  <div  class="container">
+    <center>
+      <h2 class="display-2 p-2"><b>IA CALCULATOR</b></h2></center>
+    <form action="/ia_avg" method="POST">
+  <table class="table "  >
+      <thead>
+        <tr>
+          <th scope="col">SI</th>
+          <th scope="col">sub1</th>
+          <th scope="col">sub2</th>
+          <th scope="col">sub3</th>
+          <th scope="col">sub4</th>
+          <th scope="col">sub5</th>
+          <th scope="col">sub6</th>
+          <th scope="col">sub7</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td><input type="number"  style="width: 40%;"  name="sub1"    ></td>
+          <td><input type="number" style="width: 40%;" name="sub2"></td>
+          <td><input type="number" style="width: 40%;" name="sub3"></td>
+          <td><input type="number" style="width: 40%;" name="sub4"></td>
+          <td><input type="number" style="width: 40%;" name="sub5"></td>
+          <td><input type="number" style="width: 40%;" name="sub6"></td>
+          <td><input type="number" style="width: 40%;" name="sub7"></td>
+
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td><input type="number" style="width: 40%;"  name="sub1"></td>
+          <td><input type="number" style="width: 40%;" name="sub2"></td>
+          <td><input type="number" style="width: 40%;" name="sub3"></td>
+          <td><input type="number" style="width: 40%;" name="sub4"></td>
+          <td><input type="number" style="width: 40%;" name="sub5"></td>
+          <td><input type="number" style="width: 40%;" name="sub6"></td>
+          <td><input type="number" style="width: 40%;" name="sub7"></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td><input type="number" style="width: 40%;" name="sub1" ></td>
+          <td><input type="number" style="width: 40%;" name="sub2"></td>
+          <td><input type="number" style="width: 40%;" name="sub3"></td>
+          <td><input type="number" style="width: 40%;" name="sub4"></td>
+          <td><input type="number" style="width: 40%;" name="sub5"></td>
+          <td><input type="number" style="width: 40%;" name="sub6"></td>
+          <td><input type="number" style="width: 40%;" name="sub7"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="input-group">
+      <span class="input-group-text">Assignments and Seminars</span>
+      <input type="number" aria-label="assignments" class="form-control" placeholder="Assignments">
+      <input type="number" aria-label="Seminars" class="form-control" placeholder="Seminars">
+    </div><br>
+    <div><label for="ia_avg">Average</label>
+      <div class="card m-3" style="width: 30%;">
+        <div class="card-body">
+          This 
+        </div>
+      </div>
+    
+    </div>
+    <input type="text" value="kumar" disabled>
+    <button type="submit" class="btn btn-primary">
+      CALCULATE
+  </button>
+  </form> 
+  </div>
+
+  {% endblock body%}

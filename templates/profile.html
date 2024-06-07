@@ -1,0 +1,26 @@
+  {% extends "base.html" %}
+
+  {% block title %} 
+  Profile
+  {% endblock title %} 
+
+  {% block body %}
+  <div class="container">
+  <form >
+      <center>
+      <img src="{{ url_for('static', filename='user_icon.png') }}" class="rounded-circle m-5" alt="Cinque Terre" style="width: 10%; height: 20%;">
+      <div >
+          <input type="Name" class="form-control"  value="{{username}}"   style="width: 30%;" disabled >
+          
+        </div>
+        <div >
+          <input type="text" class="form-control" value="{{email}}" style="width: 30%;" disabled>
+          
+        </div>
+        <a href="/logout" type="button" class="btn btn-primary m-3"> Logout</a>
+  </center>
+  </form>
+
+  </div> 
+  
+  {% endblock body %}

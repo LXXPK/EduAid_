@@ -1,0 +1,95 @@
+  {% extends "base.html" %}
+
+
+  {% block title %} Q_paper{% endblock title %} 
+  {% block body %}
+  <div>
+  <div class="container">
+      {% with messages=get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      
+      <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+          {{message}}
+      
+      
+      </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}<center>
+  <h2 class="display-1 p-1">Question  Paper setting</h2></center>
+  <h4 class="p-1"> Enter the required data for question  paper</h4>
+
+  <a href="saved_qp" type="button " class="btn btn-primary m-2"> Saved Papers</a><br>
+      <form action="/q_paper" method="POST">
+    <div class="mb-3 ">
+      <label for="qp_id" class="form-label"> <b>Question Paper ID</b></label><br>
+      <input type="text" class="form-control"  name="code" required><br>
+    <div class="mb-3 ">
+      <label for="date" class="form-label"> <b>Date</b></label><br>
+      <input type="date" class="form-control"  name="date"  required><br>
+    <div class="mb-3 ">
+      <label for="qp_id" class="form-label"> <b>Subject name</b></label><br>
+      <input type="text" class="form-control"  name="sub_name" required><br>
+    <div class="mb-3 ">
+      <label for="qp_id" class="form-label"> <b>Subject code </b></label><br>
+      <input type="text" class="form-control"  name="sub_code" required><br>
+      
+    </div><br>
+    <div class="mb-3 ">
+      <label for="question" class="form-label"> <b> Question 1</b></label><br>
+      <input type="text" class="form-control"  name="question1" required>
+      
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b> Question 2</b></label><br>
+      <input type="text" class="form-control"  name="question2" required>
+      
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b>Question 3</b></label><br>
+      <input type="text" class="form-control"  name="question3" required>
+    
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b>Question 4</b></label><br>
+      <input type="text" class="form-control" name="question4" required>
+    
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b>Question 5</b></label><br>
+      <input type="text" class="form-control" name="question5" required>
+    
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b>Question 6</b></label><br>
+      <input type="text" class="form-control" name="question6" required>
+    
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b>Question 7</b></label><br>
+      <input type="text" class="form-control"  name="question7" required>
+    
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b>Question 8</b></label><br>
+      <input type="text" class="form-control"  name="question8" required>
+    
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b>Question 9</b></label><br>
+      <input type="text" class="form-control"  name="question9" required>
+    
+    </div><br>
+    <div class="mb-3">
+      <label for="question" class="form-label"><b>Question 10</b></label><br>
+      <input type="text" class="form-control"  name="question10" required>
+    
+    </div><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  
+  </form>
+  </div>
+  </div>
+  {% endblock body %}
+

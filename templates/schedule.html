@@ -1,0 +1,102 @@
+    {% extends "base.html" %}
+    {% block title %} schedule{% endblock title %} 
+    {% block body%} 
+    <style>
+        input{
+            border-radius: 20px;
+        }
+    </style>
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, msg in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <h1 class="display-3 m-3"><b>Time Table Scheduler:</b>Plan Your Academic Schedule</h1>
+        <a href="/saved_schedules" type="button" class="btn btn-primary m-2">Saved Schedules</a>
+
+        <h1>New Schedule</h1>
+
+        <form action="/schedule" method="POST">
+            <div >
+                <label for="id">Schedule Id</label>
+                <input type="number" id="id" name="id" placeholder="Schedule ID" class="m-1 p-2"  required>
+            </div><br>
+            <div >
+                <label for="days_in_week">Number of days in a week:</label>
+                <input type="number" id="days_in_week" name="days_in_week" placeholder="no days in week" class="m-1 p-2" required>
+            </div><br>
+
+            <div >
+                <label for="slots-per-day">Number of slots per day:</label>
+                <input type="number" id="slots-per-day" name="slots_per_day" placeholder="slots per day" class="m-1 p-2" required>
+            </div><br>
+            <div >
+                <label for="start_time">Start time :</label>
+                <input type="text" id="start_time" name="start_time" placeholder="start_time" class="m-1 p-2" required>
+            </div><br>
+            <div >
+                <label for="time_per_slot">Time per slot:</label>
+                <input type="number" id="time_per_slot" name="time_per_slot" placeholder="time_per_slot" class="m-1 p-2" required>
+            </div><br>
+            <div ><span style="font-size: 20px; color: red;">Note:If the subjects are more than the slots please do select a option below </span><br>
+                <label for="repetation">Do you want to allow repetation of subjects in single day :</label><br>
+                <label>
+                    <input type="radio"  class="m-2"  name="repetation" value="allow">
+                    Allow repetition
+                </label>
+                <label>
+                    <input type="radio" class="m-2" name="repetation"  value="not">
+                    Don't allow repetition
+                </label>
+                
+            </div><br>
+
+            <div >
+                <h2>Subjects and Teachers:</h2>
+                <div class="subject-inputs ">
+                    <!-- Subject inputs will be added dynamically -->
+                </div>
+            </div>
+
+            <div >
+                <button type="button" class="btn btn-primary m-1" onclick="addSubject()">Add Subject</button>
+                <button type="submit" class="btn btn-primary m-1">Save Data</button>
+            </div>
+
+            
+        </form>
+    </div>
+
+    <script>
+        function addSubject() {
+            const subjectsContainer = document.querySelector('.subject-inputs');
+
+            const subjectDiv = document.createElement('div');
+            // subjectDiv.classList.add('input-container');
+
+            subjectDiv.innerHTML = `
+                <label for="subject">Subject:</label>
+                <input type="text" name="subjectName[]" placeholder="Subject name" class="m-1 p-2" required>
+                <label for="teachers">Teachers:</label>
+                <input type="text" name="teachers[]" placeholder=" Teacher name" class="m-1 p-2" required>
+                <label for="slots">Slots per week:</label>
+                <input type="number" name="slotsPerWeek[]" placeholder="No of slots per week" class="m-1 p-2" required>
+                <button type="button" onclick="removeSubject(this)" class="btn btn-primary m-1">Remove</button><br>
+            `;
+
+            subjectsContainer.appendChild(subjectDiv);
+        }
+
+        function removeSubject(button) {
+            const subjectDiv = button.parentNode;
+            subjectDiv.parentNode.removeChild(subjectDiv);
+        }
+    </script>
+    {% endblock body %}

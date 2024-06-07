@@ -1,0 +1,96 @@
+    {% extends "base.html" %}
+
+    {% block title %} Edit details{% endblock title %}
+    {% block body%}
+    <div class="container m-5">
+    
+        <h1 class="mb-4 display-2"><b>Student Details</b></h1>
+        <form class="row g-3" >
+            <div class="col-md-6">
+                <label for="student_usn" class="form-label">Student USN</label>
+                <input type="text" class="form-control" id="student_usn" placeholder="Student usn" name="student_usn"    disabled  value="{{posts.student_usn}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name"   disabled  value="{{posts.first_name}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name"   disabled  value="{{posts.last_name}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="date_of_birth" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"   disabled  value="{{posts.date_of_birth}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email ID</label>
+                <input type="email" class="form-control" id="email" placeholder="Email ID" name="email"   disabled  value="{{posts.email}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="phone_number" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone_number" placeholder="Phone Number" name="phone_number"   disabled  value="{{posts.phone_number}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="gender" class="form-label">Gender</label>
+                <input type="text" class="form-control"  placeholder="Class Section" name="gender"   disabled  value="{{posts.gender}}"><br>
+            
+            </div>
+            <div class="col-md-6">
+                <label for="section" class="form-label">Class Section</label>
+                <input type="text" class="form-control" id="section" placeholder="Class Section" name="section"   disabled  value="{{posts.section}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="year_of_studying" class="form-label">Year of Studying</label>
+                <input type="text" class="form-control" id="year_of_studying" placeholder="Year of Studying" name="year_of_studying"   disabled  value="{{posts.year_of_studying}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="semester" class="form-label">Semester</label>
+                <input type="text" class="form-control" id="semester" placeholder="Year of Studying" name="semester"   disabled  value="{{posts.semester}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="year_of_joining" class="form-label">Year of Joining</label>
+                <input type="text" class="form-control" id="year_of_joining" placeholder="Year of Joining" name="year_of_joining"   disabled  value="{{posts.year_of_joining}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="department" class="form-label">Department</label>
+                <input type="text" class="form-control" id="department" placeholder="Department" name="department"   disabled  value="{{posts.department}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="course" class="form-label">Course</label>
+                <input type="text" class="form-control" id="course" placeholder="Course" name="course"   disabled  value="{{posts.course}}"><br>
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" name="address"   disabled  value="{{posts.address}}"><br>
+            </div>
+            <div class="col-12">
+                <label for="address2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor" name="address2"   disabled  value="{{posts.address2}}"><br>
+            </div>
+            <div class="col-md-6">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city"   disabled  value="{{posts.city}}"><br>
+            </div>
+            <div class="col-md-4">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control"  placeholder="Class Section" name="state"   disabled  value="{{posts.state}}"><br>
+        
+            </div>
+            <div class="col-md-2">
+                <label for="zipcode" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode"   disabled  value="{{posts.zipcode}}"><br>
+            </div>
+            <!-- <div class="col-12 mt-3">
+                <button type="submit" class="btn btn-primary"  >Submit</button><br>
+            </div> -->
+            <div class="col-12 mt-3">
+            <a href="/student_info" class="btn btn-primary"  >Back</a> <br>
+            </div>
+            <!-- <div class="col-12 mt-3">
+                <a href="/student_info" class="btn btn-primary">Back</a>
+            </div> -->
+        </form>
+    </div>
+
+
+    {% endblock body%}

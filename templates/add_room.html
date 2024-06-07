@@ -1,0 +1,53 @@
+  {% extends "base.html" %}
+  {% block title %} add_room{% endblock title %} 
+  {% block body %}
+  <center><h1 class="display-3 m-4">Add New Room</h1></center>
+  <div class="container">
+
+      <form action="/add_room" method="POST">
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {%for category, msg in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ msg }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {%endfor%}
+      {% endif %}
+      {% endwith %}
+
+      <div class="mb-3">
+          <label for="room_no" class="form-label">Room_no</label>
+          <input type="text" class="form-control" id="room_no" name="room_no">
+          
+        </div>
+        <div class="mb-3">
+          <label for="col" class="form-label">col</label>
+          <input type="text" class="form-control" id="col" name="col">
+          
+        </div>
+        <div class="mb-3">
+          <label for="row" class="form-label">row</label>
+          <input type="text" class="form-control" id="row" name="row">
+          
+        </div>
+        <div class="mb-3">
+          <label for="seat" class="form-label">seat</label>
+          <input type="text" class="form-control" id="seat" name="seat">
+          
+        </div>
+    
+      
+        
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+
+
+
+
+
+
+  {% endblock body %}

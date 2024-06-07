@@ -1,0 +1,69 @@
+  {% extends "base.html" %}
+
+  {% block title %} Student_info{% endblock title %}
+  {% block body%}
+  <div class="container mt-3 mb-5">
+    {% with messages=get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+
+  <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+      {{message}}
+
+
+  </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+  <br>
+    <center>
+      <h2 class="display-2 pb-2"><b>Student Information</b></h2></center>
+      <a href="/student_update"><button type="submit" class="btn btn-primary mb-3">
+          NEW ENTRY
+      </button></a>
+      <div>
+  <table class="table mb-5">
+      <thead>
+        <tr>
+          <!-- <th scope="col">SI</th> -->
+          <th scope="col">USN</th>
+          <th scope="col">FIRST NAME</th>
+          <th scope="col">LAST NAME</th>
+          <!-- <th scope="col" >CALCULATE </th> -->
+          <th scope="col">EDIT</th>
+          <th scope="col">Delete</th>
+          <th scope="col">View</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+      {% for post in query %}
+        <tr>
+          <!-- <td scope="row">{{counter}}</td> -->
+        
+          <td>{{post.student_usn}}</td>
+          <td>{{post.first_name}}</td>
+          <td>{{post.last_name}}</td>
+          <!-- <td><a href="/ia_avg"><button type="submit" class="btn btn-primary">
+              IA MARKS
+          </button></a></td> -->
+          <td><a href="/edit/{{post.student_id}}"><button type="submit" class="btn btn-primary">
+              Edit
+          </button></a></td>
+          <td><a href="/delete/{{post.student_id}}"><button type="submit" class="btn btn-primary">
+              Delete
+          </button></a></td>
+          <td><a href="/view/{{post.student_id}}"><button type="submit" class="btn btn-primary">
+              View
+          </button></a></td>
+        </tr>
+        
+        {% endfor %}
+
+        
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  {% endblock body%}

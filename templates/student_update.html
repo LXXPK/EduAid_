@@ -1,0 +1,109 @@
+    {% extends "base.html" %}
+
+    {% block title %} Student_add{% endblock title %}
+    {% block body%}
+    <div class="container m-5" >
+        <h1 class="mb-4 display-2"><b>Student Details</b></h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {%for category, msg in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ msg }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {%endfor%}
+            {% endif %}
+            {% endwith %}
+        <form class="row g-3" action="/student_update" method="POST">
+            <div class="col-md-6">
+                <label for="student_usn" class="form-label">Student USN</label>
+                <input type="text" class="form-control" id="student_usn" placeholder="Student usn" name="student_usn" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="date_of_birth" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email ID</label>
+                <input type="email" class="form-control" id="email" placeholder="Email ID" name="email" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="phone_number" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone_number" placeholder="Phone Number" name="phone_number" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option selected>---</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select><br>
+            </div>
+            <div class="col-md-6">
+                <label for="class_section" class="form-label">Class Section</label>
+                <input type="text" class="form-control" id="class_section" placeholder="Class Section" name="section" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="year_of_studying" class="form-label">Year of Studying</label>
+                <input type="text" class="form-control" id="year_of_studying" placeholder="Year of Studying" name="year_of_studying" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="semester" class="form-label">Semester</label>
+                <input type="text" class="form-control" id="semester" placeholder="Year of Studying" name="semester" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="year_of_joining" class="form-label">Year of Joining</label>
+                <input type="text" class="form-control" id="year_of_joining" placeholder="Year of Joining" name="year_of_joining" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="department" class="form-label">Department</label>
+                <input type="text" class="form-control" id="department" placeholder="Department" name="department" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="course" class="form-label">Course</label>
+                <input type="text" class="form-control" id="course" placeholder="Course" name="course" required><br>
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" name="address" required><br>
+            </div>
+            <div class="col-12">
+                <label for="address2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor" name="address2" required><br>
+            </div>
+            <div class="col-md-6">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city" required><br>
+            </div>
+            <div class="col-md-4">
+                <label for="state" class="form-label">State</label>
+                <select id="state" class="form-select" name="state" required>
+                    <option selected>Choose...</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                </select><br>
+            </div>
+            <div class="col-md-2">
+                <label for="zipcode" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode" required><br>
+            </div>
+            <div class="col-12 mt-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="student_info" type="button" class="btn btn-primary m-2">Back</a>
+            </div>
+        </form>
+    </div>
+
+
+    {% endblock body%}

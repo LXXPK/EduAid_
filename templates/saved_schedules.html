@@ -1,0 +1,39 @@
+    {% extends "base.html" %}
+    {% block title %}saved_schedules{% endblock title %}
+    {% block body %}
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, msg in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <center><h1 class="display-1 m-3">Saved Schedules</h1></center>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Schedule_id</th>
+                <th>Days per Week</th>
+                <th>Slots per day</th>
+                <th>Preview</th>
+                <th>Delete</th>
+            </tr>
+        {% for q in query %}
+        <tr>
+            <td>{{q.id}}</td>
+            <td>{{q.days_in_week}}</td>
+            <td>{{q.slots_per_day}}</td>
+            <td><a href="/preview_timetable/{{q.id}}" type="button" class="btn btn-primary">Preview</a></td>
+            <td><a href="/delete_timetable/{{q.id}}" type="button" class="btn btn-primary">Delete</a></td>
+
+        </tr>
+    {% endfor %}
+        </table>
+        <a href="/schedule" type="button" class="btn btn-primary">Back</a>
+    </div>
+
+    {% endblock body %}

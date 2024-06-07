@@ -1,0 +1,83 @@
+    {% extends "base.html" %}
+    {% block title %}Generate{% endblock title %}
+    {% block body %}
+    <style>
+        input{
+        border-radius: 13px ;
+        }
+    </style>
+    <div class="container">
+        <center><h1 class="display-4">Add New Seating Matrix Data</h1></center>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {%for category, msg in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ msg }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {%endfor%}
+            {% endif %}
+            {% endwith %}
+        <form id="generateForm" action="/generate" method="POST">
+            <div class="mb-3">
+                <label for="room_no" class="form-label">Room NO.</label>
+                <input type="text" class="form-control" id="room_no" name="room_no" required>
+            </div>
+            <div id="studentGroups">
+                <div class="studentGroup mb-3">
+                    <label>Start number</label>
+                    <input type="text" class="start" name="start_1" required>
+                    <label>End number</label>
+                    <input type="text" class="end" name="end_1" required>
+                    <button type="button" class="btn btn-danger removeGroup m-2">Remove</button>
+                </div>
+            </div>
+            <button type="button" id="addStudentGroup" class="btn btn-primary">Add Student Group</button><br>
+            <label for="missing">Missing numbes if any </label>
+            <input type="text" name="missing" class="m-2"><br>
+            <button type="submit" class="btn btn-primary m-2">Submit</button>
+            <a href="/seating_matrix" type="button" class="btn btn-primary m-2" >Back</a>
+        <!-- <a href="/seating_view" type="button" class="btn btn-primary">View</a> -->
+        </form>
+    </div>
+
+    <script>
+        var groupCount = 1; // Initialize group counter
+
+        // Function to add more student group fields
+        document.getElementById('addStudentGroup').addEventListener('click', function() {
+            var studentGroupDiv = document.createElement('div');
+            studentGroupDiv.classList.add('studentGroup', 'mb-3');
+
+            var startLabel = document.createElement('label');
+            startLabel.textContent = 'Start number';
+            var startInput = document.createElement('input');
+            startInput.type = 'text';
+            startInput.classList.add('start','m-1');
+            startInput.name = 'start_' + (++groupCount);
+
+            var endLabel = document.createElement('label');
+            endLabel.textContent = 'End number';
+            var endInput = document.createElement('input');
+            endInput.type = 'text';
+            endInput.classList.add('end','m-2');
+            endInput.name = 'end_' + groupCount;
+
+            var removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.classList.add('btn', 'btn-danger', 'removeGroup','m-1');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', function() {
+                studentGroupDiv.remove();
+            });
+
+            studentGroupDiv.appendChild(startLabel);
+            studentGroupDiv.appendChild(startInput);
+            studentGroupDiv.appendChild(endLabel);
+            studentGroupDiv.appendChild(endInput);
+            studentGroupDiv.appendChild(removeButton);
+
+            document.getElementById('studentGroups').appendChild(studentGroupDiv);
+        });
+    </script>
+    {% endblock body %}

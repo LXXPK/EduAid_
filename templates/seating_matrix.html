@@ -1,0 +1,35 @@
+  {% extends "base.html" %}
+
+  {% block title %} seating_matrix{% endblock title %} 
+  {% block body %}
+  <div class="container m-4">
+      <h1 class="display-1">Seating Arrangement</h1>
+      <a href="/add_room" type="button" class="btn btn-primary m-3">Add new room</a>
+      <a href="/generate" type="button" class="btn btn-primary">Generate</a>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Room_no</th>
+          <th scope="col">Rows</th>
+          <th scope="col">Columns</th>
+          <th scope="col">Seats</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for q in query %}
+        <tr>
+        
+          <th >{{q.room_no}}</th>
+          
+          <td>{{q.col}}</td>
+          <td>{{q.row}}</td>
+          <td>{{q.seat}}</td>
+          <td><a href="/delete_room/{{q.room_id}}" type="button" class="btn btn-danger">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% endblock body %}
