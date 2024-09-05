@@ -16,12 +16,12 @@
 <h2>Technologies Used</h2>
 <ul>
   <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
-  <li><strong>Backend:</strong> Django or Flask (depending on your setup)</li>
-  <li><strong>Database:</strong> SQLite or MySQL for managing student data, timetables, and exam seating arrangements</li>
+  <li><strong>Backend:</strong> Flask </li>
+  <li><strong>Database:</strong>  MySQL for managing student data, timetables, and exam seating arrangements</li>
 </ul>
 
 <h2>How It Works</h2>
-<p>The Academic Assistant uses Django or Flask as the backend framework to handle server-side logic, and a relational database like SQLite or MySQL to store student data, timetables, and seating arrangements. The user interface is built using HTML, CSS, and JavaScript, ensuring a smooth and responsive experience for educators.</p>
+<p>The Academic Assistant uses Flask as the backend framework to handle server-side logic, and a relational database  MySQL to store student data, timetables, and seating arrangements. The user interface is built using HTML, CSS, and JavaScript, ensuring a smooth and responsive experience for educators.</p>
 
 <h2>Future Enhancements</h2>
 <ul>
