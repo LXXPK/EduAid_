@@ -2,7 +2,7 @@
 
 <h2>Project Overview</h2>
 <p>The Academic Assistant is a comprehensive web-based solution designed exclusively for educators, offering a suite of features to streamline academic management tasks. This platform simplifies the management of student information, timetable generation, question paper creation, and exam seating arrangements, enhancing teacher productivity and administrative efficiency.</p>
-<img src="https://github.com/user-attachments/assets/adce8daa-2c90-45c9-8647-0f6ecb4feda5" alt="ScreenShot" width="300" height="300">
+<center><img src="https://github.com/user-attachments/assets/adce8daa-2c90-45c9-8647-0f6ecb4feda5" alt="ScreenShot" width="800" height="500"></center>
 <h2>Features</h2>
 <ul>
   <li><strong>Student Information Management:</strong> Efficient tools for managing student records, including editing, viewing, and deleting information stored in the database.</li>
@@ -10,8 +10,8 @@
   <li><strong>Question Paper Setting:</strong> Allows educators to design and generate examination question papers using predefined templates. Teachers input details such as subject name, code, and content to create ready-to-download formatted papers.</li>
   <li><strong>Seating Matrix Generation:</strong> Generates detailed exam seating arrangements by providing room numbers and student groupings. The matrices can be downloaded for easy logistical planning.</li>
   <li><strong>User Management:</strong> Includes features like signup, signin, signout, and profile management to ensure secure and personalized access to the platform.</li>
-</ul>
-<img src="https://github.com/user-attachments/assets/d753c242-9f09-4772-ae68-b973e70ae4c6" alt="Screenshot" width="300" height="300" >
+</ul><center>
+<img src="https://github.com/user-attachments/assets/d753c242-9f09-4772-ae68-b973e70ae4c6" alt="Screenshot" width="800" height="500" ></center>
 
 <h2>Technologies Used</h2>
 <ul>
